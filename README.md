@@ -1,8 +1,22 @@
-# React + Vite
+# Personal Finance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based application to help track income, expenses, and savings goals.
+Built using Vite for a fast development experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Budget tracking and savings goals
+- Responsive design
+
+## Setup
+
+To run this project locally:
+
+- npm install
+- npm run dev
+
+## Technologies Used
+
+- React
+- Vite
+- Chart.js
