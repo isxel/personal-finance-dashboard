@@ -1,0 +1,11 @@
+.dashboard {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.25rem;
+  color: #333333;
+}
+
+.welcomeText {
+  margin-top: 1rem;
+  font-weight: bold;
+}
