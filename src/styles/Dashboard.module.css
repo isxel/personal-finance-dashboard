@@ -26,3 +26,6 @@
   font-size: 1.5rem;
   cursor: pointer;
 }
+.getStartedButton:hover {
+  background-color: #45a049;
+}
