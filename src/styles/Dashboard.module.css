@@ -5,27 +5,3 @@
   color: #333333;
   margin-top: 100px;
 }
-
-.welcomeText {
-  margin-top: 1.5rem;
-  font-weight: normal;
-}
-
-.subText {
-  font-size: 2rem;
-  font-weight: normal;
-}
-
-.getStartedButton {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #4caf50;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-.getStartedButton:hover {
-  background-color: #45a049;
-}
