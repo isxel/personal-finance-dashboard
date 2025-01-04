@@ -1,8 +1,10 @@
 .banner {
   display: flex;
-  background-color: aquamarine;
-  padding: 2rem;
-  margin: 0;
+  background-color: #caf3cb;
+  padding: 2em;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .bannerText {
@@ -10,4 +12,6 @@
   margin-bottom: 1.5rem;
   font-weight: normal;
   color: #595858;
+  max-width: 1200px;
+  text-align: center;
 }
