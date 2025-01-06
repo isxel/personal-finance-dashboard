@@ -1,0 +1,33 @@
+.features {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  background-color: #f1f1f1;
+}
+
+.leftSide {
+  flex: 1;
+  text-align: left;
+  padding-right: 2rem;
+}
+
+.rightSide {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.titleText {
+  font-size: 2.5rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.subText {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  font-weight: normal;
+}

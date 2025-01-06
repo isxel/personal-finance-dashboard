@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Hero from "./components/Hero.jsx";
 import Banner from "./components/Banner.jsx";
+import Features from "./components/Features.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <>
               <Hero />
               <Banner />
+              <Features />
             </>
           }
         />
