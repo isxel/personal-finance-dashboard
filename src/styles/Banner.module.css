@@ -1,6 +1,6 @@
 .banner {
   display: flex;
-  background-color: #caf3cb;
+  background-color: #d8fad9;
   padding: 2em;
   margin: 0 auto;
   align-items: center;
@@ -10,7 +10,7 @@
 .bannerText {
   /* font-size: 2rem; */
   margin-bottom: 1.5rem;
-  font-weight: normal;
+  font-weight: 200;
   color: #595858;
   max-width: 1200px;
   text-align: center;

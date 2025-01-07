@@ -1,26 +1,29 @@
 .features {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3rem;
-  margin-left: 3rem;
-  /* margin-right: 2rem; */
-
+  flex-direction: column; /* Stack rows vertically */
+  gap: 3rem; /* Add spacing between rows */
   margin: 0 auto;
-  width: 100vw;
-  background-color: #e6e6e6;
+  max-width: 1200px;
+  padding: 3rem;
+}
+
+.featureRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically align left and right sides */
 }
 
 .leftSide {
-  flex: 1;
+  flex: 1; /* Allow left side to take up equal space */
   text-align: left;
-  padding-right: 2rem;
+  max-width: 500px;
 }
 
 .rightSide {
-  flex: 1;
+  flex: 0; /* Keep the right side content compact */
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .titleText {
@@ -32,5 +35,9 @@
 .subText {
   font-size: 1.25rem;
   margin-bottom: 2rem;
-  font-weight: normal;
+  font-weight: 200;
+}
+
+.icon {
+  font-size: 12rem; /* Adjust icon size as needed */
 }
