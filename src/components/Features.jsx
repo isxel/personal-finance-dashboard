@@ -1,4 +1,5 @@
 import style from "../styles/Features.module.css";
+import { FaPiggyBank } from "react-icons/fa";
 
 function Features() {
   return (
@@ -16,6 +17,11 @@ function Features() {
         <h2 className={style.subText}>
           Easily track and categorize your expenses.
         </h2>
+      </div>
+      <div className={style.rightSide}>
+        <FaPiggyBank className={style.piggyBank} />
+        <FaPiggyBank className={style.piggyBank} />
+        <FaPiggyBank className={style.piggyBank} />
       </div>
     </div>
   );
