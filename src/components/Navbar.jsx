@@ -9,9 +9,14 @@ function Navbar() {
           Personal Finance
         </Link>
       </nav>
-      <Link to="/dashboard" className={styles.navbarText}>
-        Sign Up Now
-      </Link>
+      <div className={styles.authLinks}>
+        <Link to="/login" className={styles.navbarText}>
+          Login
+        </Link>
+        <Link to="/signup" className={styles.signupText}>
+          Sign Up
+        </Link>
+      </div>
     </header>
   );
 }

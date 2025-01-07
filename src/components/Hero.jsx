@@ -1,5 +1,6 @@
 import style from "../styles/Hero.module.css";
 import heroImg from "../assets/img/hero-image-finance.png";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -12,7 +13,11 @@ function Hero() {
           Track your spending, analyze your income, and stay on top of your
           savings.
         </h2>
-        <button className={style.getStartedButton}>Get Started</button>
+        <button className={style.getStartedButton}>
+          <Link to="/dashboard" className={style.getStartedButton}>
+            Get Started
+          </Link>
+        </button>
       </div>
       <div className={style.rightSide}>
         <img

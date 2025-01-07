@@ -37,13 +37,14 @@
 
 /* Button styles */
 .getStartedButton {
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 0.75rem;
   background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
+  text-decoration: none;
 }
 .getStartedButton:hover {
   background-color: #45a049;
