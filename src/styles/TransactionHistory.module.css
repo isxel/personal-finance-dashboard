@@ -1,0 +1,76 @@
+.transactionHistory {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.controls {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.controls input,
+.controls select {
+  padding: 8px;
+  font-size: 16px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f4f4f4;
+}
+
+.income {
+  color: green;
+}
+
+.expense {
+  color: red;
+}
+
+.loadMoreButton {
+  padding: 10px;
+  font-size: 16px;
+  color: #838383;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.loadMoreButton:hover {
+  color: #272727;
+}
+
+.buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.loadMoreButton,
+.loadLessButton {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #767676;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.loadMoreButton:hover,
+.loadLessButton:hover {
+  color: #141414;
+}

@@ -2,6 +2,7 @@ import style from "../styles/Dashboard.module.css";
 import MonthlySpending from "../components/MonthlySpending.jsx";
 import MonthlyIncome from "../components/MonthlyIncome.jsx";
 import MoneySaved from "../components/MoneySaved.jsx";
+import TransactionHistory from "../components/TransactionHistory.jsx";
 
 function Dashboard() {
   return (
@@ -11,6 +12,9 @@ function Dashboard() {
         <MoneySaved />
         <MonthlySpending />
         <MonthlyIncome />
+      </div>
+      <div className={style.transactionHistory}>
+        <TransactionHistory />
       </div>
     </div>
   );

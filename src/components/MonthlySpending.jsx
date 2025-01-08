@@ -1,10 +1,10 @@
 import style from "../styles/Widget.module.css";
-import { monthlyData } from "../data/mockData";
+// import { monthlyData } from "../data/mockData";
 import { FaArrowDown } from "react-icons/fa";
 import SpendingGraph from "./SpendingGraph";
 
 function MonthlySpending() {
-  const latestMonth = monthlyData[monthlyData.length - 1];
+  // const latestMonth = monthlyData[monthlyData.length - 1];
 
   return (
     <div className={style.widget}>
@@ -14,9 +14,9 @@ function MonthlySpending() {
         >
           {" "}
         </FaArrowDown>
-        Spending for {latestMonth.month}
+        Spending Overview
       </h2>
-      <p>${latestMonth.spending}</p>
+      {/* <p>${latestMonth.spending}</p> */}
       <SpendingGraph />
     </div>
   );
