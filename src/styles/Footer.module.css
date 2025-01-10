@@ -8,17 +8,19 @@
 .footerContent {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Ensures vertical alignment */
+  align-items: flex-start; /* Ensures vertical alignment */
   max-width: 1200px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .contact,
 .quickLinks,
 .social {
   flex: 1; /* Equal space for each section */
-  padding: 0 20px;
+  padding: 1rem 20px;
   text-align: center; /* Center-aligns the text within each section */
+  box-sizing: border-box;
 }
 
 .contact h3,
@@ -71,4 +73,38 @@
   text-align: center;
   font-size: 0.9rem;
   color: #bbb;
+}
+
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center all items */
+  }
+
+  .contact,
+  .quickLinks,
+  .social {
+    flex: unset; /* Reset flex behavior for stacked layout */
+    width: 100%; /* Ensure each section takes full width */
+    text-align: center; /* Keep content centered */
+    margin-bottom: 1.5rem; /* Add space between stacked sections */
+  }
+}
+
+@media (max-width: 480px) {
+  .footerContent {
+    padding: 1rem; /* Add padding for very small screens */
+  }
+
+  .contact h3,
+  .quickLinks h3,
+  .social h3 {
+    font-size: 1.2rem; /* Reduce heading size */
+  }
+
+  .contact p,
+  .social p,
+  .quickLinks ul {
+    font-size: 0.9rem; /* Reduce font size for text */
+  }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import style from "../styles/Dashboard.module.css";
 import MonthlySpending from "../components/MonthlySpending.jsx";
 import MonthlyIncome from "../components/MonthlyIncome.jsx";
