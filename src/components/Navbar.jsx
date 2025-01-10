@@ -1,12 +1,13 @@
 import styles from "../styles/Navbar.module.css";
 import { Link } from "react-router-dom";
+import sprout from "../assets/img/sprout.png";
 
 function Navbar() {
   return (
     <header className={styles.header}>
       <nav className={styles.navbarText}>
         <Link to="/" className={styles.navbarText}>
-          Personal Finance
+          <img src={sprout} className={styles.logo}></img>
         </Link>
       </nav>
       <div className={styles.authLinks}>
