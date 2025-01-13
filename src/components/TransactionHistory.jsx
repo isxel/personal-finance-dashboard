@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import styles from "../styles/TransactionHistory.module.css";
-import { transactions } from "../data/mockData";
 
-const saveToLocalStorage = (key, data) => {
-  localStorage.setItem(key, JSON.stringify(data));
-};
+// const saveToLocalStorage = (key, data) => {
+//   localStorage.setItem(key, JSON.stringify(data));
+// };
 
 function TransactionHistory() {
   const [transactions, setTransactions] = useState(() => {
@@ -110,7 +109,9 @@ function TransactionHistory() {
           required
           placeholder="Amount (e.g., -50 or 200)"
         />
-        <button type="submit">Add Transaction</button>
+        <button type="submit" className={styles.addTransactionButton}>
+          Add Transaction
+        </button>
       </form>
 
       {/* Search and Filter */}
@@ -149,7 +150,7 @@ function TransactionHistory() {
               <td className={t.amount >= 0 ? styles.income : styles.expense}>
                 ${Math.abs(t.amount).toFixed(2)}
               </td>
-              <td>
+              <td className={styles.deleteField}>
                 <button
                   onClick={() => handleDeleteTransaction(t.id)}
                   className={styles.deleteButton}

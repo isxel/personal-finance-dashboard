@@ -74,3 +74,39 @@
 .loadLessButton:hover {
   color: #141414;
 }
+
+.deleteButton {
+  /* padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #ff0000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; */
+  background-color: transparent;
+  border: none;
+}
+.deleteButton:hover {
+  color: #ff0000;
+}
+
+.deleteField {
+  display: flex;
+  width: 50px;
+  justify-content: center;
+}
+
+.addTransactionForm {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.addTransactionButton {
+  padding: 5px;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
