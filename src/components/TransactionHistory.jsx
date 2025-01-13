@@ -1,65 +1,50 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../styles/TransactionHistory.module.css";
+import { transactions } from "../data/mockData";
 
-const transactions = [
-  {
-    date: "2025-01-01",
-    description: "Groceries",
-    category: "Food",
-    amount: -50,
-  },
-  {
-    date: "2025-01-03",
-    description: "Salary",
-    category: "Income",
-    amount: 2000,
-  },
-  {
-    date: "2025-01-05",
-    description: "Electricity Bill",
-    category: "Utilities",
-    amount: -100,
-  },
-  { date: "2025-01-06", description: "Dinner", category: "Food", amount: -30 },
-  { date: "2025-01-07", description: "Bonus", category: "Income", amount: 500 },
-  {
-    date: "2025-01-08",
-    description: "Internet Bill",
-    category: "Utilities",
-    amount: -70,
-  },
-  { date: "2025-01-09", description: "Coffee", category: "Food", amount: -5 },
-  {
-    date: "2025-01-10",
-    description: "Car Repair",
-    category: "Miscellaneous",
-    amount: -200,
-  },
-  {
-    date: "2025-01-11",
-    description: "Freelance Payment",
-    category: "Income",
-    amount: 800,
-  },
-  {
-    date: "2025-01-12",
-    description: "Shopping",
-    category: "Miscellaneous",
-    amount: -120,
-  },
-  {
-    date: "2025-01-12",
-    description: "Coffee",
-    category: "Food",
-    amount: -6,
-  },
-  // Add more dummy transactions as needed
-];
+const saveToLocalStorage = (key, data) => {
+  localStorage.setItem(key, JSON.stringify(data));
+};
 
 function TransactionHistory() {
+  const [transactions, setTransactions] = useState(() => {
+    const savedTransactions = localStorage.getItem("transactions");
+    return savedTransactions ? JSON.parse(savedTransactions) : [];
+  });
+  const [newTransaction, setNewTransaction] = useState({
+    date: "",
+    description: "",
+    category: "",
+    amount: "",
+  });
   const [filter, setFilter] = useState("");
   const [search, setSearch] = useState("");
   const [visibleCount, setVisibleCount] = useState(5);
+
+  useEffect(() => {
+    localStorage.setItem("transactions", JSON.stringify(transactions));
+  }, [transactions]);
+
+  const handleAddTransaction = (e) => {
+    e.preventDefault();
+    const transactionWithId = {
+      ...newTransaction,
+      id: Date.now(),
+      amount: parseFloat(newTransaction.amount),
+    };
+    setTransactions((prev) => [transactionWithId, ...prev]);
+    setNewTransaction({ date: "", description: "", category: "", amount: "" });
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewTransaction((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleDeleteTransaction = (id) => {
+    const updatedTransactions = transactions.filter((t) => t.id !== id);
+    setTransactions(updatedTransactions);
+  };
 
   const filteredTransactions = transactions
     .filter(
@@ -82,6 +67,51 @@ function TransactionHistory() {
   return (
     <div className={styles.transactionHistory}>
       <h2>Transaction History</h2>
+
+      {/* Add Transaction Form */}
+      <form
+        onSubmit={handleAddTransaction}
+        className={styles.addTransactionForm}
+      >
+        <h3>Add New Transaction</h3>
+        <input
+          type="date"
+          name="date"
+          value={newTransaction.date}
+          onChange={handleInputChange}
+          required
+          placeholder="date"
+        />
+        <input
+          type="text"
+          name="description"
+          value={newTransaction.description}
+          onChange={handleInputChange}
+          required
+          placeholder="description"
+        />
+        <select
+          name="category"
+          value={newTransaction.category}
+          onChange={handleInputChange}
+          required
+        >
+          <option value="">Select Category</option>
+          <option value="Food">Food</option>
+          <option value="Income">Income</option>
+          <option value="Utilities">Utilities</option>
+          <option value="Miscellaneous">Miscellaneous</option>
+        </select>
+        <input
+          type="number"
+          name="amount"
+          value={newTransaction.amount}
+          onChange={handleInputChange}
+          required
+          placeholder="Amount (e.g., -50 or 200)"
+        />
+        <button type="submit">Add Transaction</button>
+      </form>
 
       {/* Search and Filter */}
       <div className={styles.controls}>
@@ -118,6 +148,14 @@ function TransactionHistory() {
               <td>{t.category}</td>
               <td className={t.amount >= 0 ? styles.income : styles.expense}>
                 ${Math.abs(t.amount).toFixed(2)}
+              </td>
+              <td>
+                <button
+                  onClick={() => handleDeleteTransaction(t.id)}
+                  className={styles.deleteButton}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
