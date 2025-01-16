@@ -5,8 +5,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 100%; /* Make sure the widget takes full width within its container */
-  max-width: 400px; /* Keeps the widget size proportional */
-  aspect-ratio: 2/1; /* Ensures a rectangular shape (width twice the height) */
+  max-width: 550px; /* Keeps the widget size proportional */
   margin: 2rem auto;
   box-sizing: border-box;
 }
