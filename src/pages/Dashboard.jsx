@@ -24,6 +24,11 @@ function Dashboard() {
   return (
     <div className={style.dashboard}>
       <h1 className={style.heading}>{greeting}</h1>
+      <div className={style.editLinkContainer}>
+        <Link to="/edit-data" className={style.editLink}>
+          Edit Data
+        </Link>
+      </div>
       <div className={style.widgets}>
         <MoneySaved monthlyData={monthlyData} />
         <MonthlySpending
@@ -35,11 +40,7 @@ function Dashboard() {
           setMonthlyData={setMonthlyData}
         />
       </div>
-      <div className={style.editLink}>
-        <Link to="/edit-data" className={style.editButton}>
-          Edit Data
-        </Link>
-      </div>
+
       <div className={style.transactionHistory}>
         <TransactionHistory />
       </div>

@@ -96,3 +96,9 @@ button:hover {
 .cancelButton:hover {
   background-color: #c82333; /* Darker red on hover */
 }
+
+@media (max-width: 800px) {
+  .monthContainer {
+    grid-template-columns: 1fr; /* Single column for small screens */
+  }
+}
