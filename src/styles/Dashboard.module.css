@@ -14,3 +14,26 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 }
+
+.editLinkContainer {
+  display: flex;
+  justify-content: right;
+}
+
+.editLink {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  display: inline-block;
+  background-color: #4caf50;
+  border-radius: 5px;
+  padding: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.editLink:hover {
+  background-color: #29902d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}

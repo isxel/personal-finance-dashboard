@@ -1,9 +1,10 @@
 import style from "../styles/Widget.module.css";
-import { monthlyData } from "../data/mockData";
+// import { monthlyData } from "../data/mockData";
 import { FaPiggyBank } from "react-icons/fa";
 import { FaMoneyBill } from "react-icons/fa";
+import PropTypes from "prop-types";
 
-function MoneySaved() {
+function MoneySaved({ monthlyData }) {
   // Calculate total savings for the latest month
   const latestMonth = monthlyData[monthlyData.length - 1];
   const savings = latestMonth.income - latestMonth.spending;
@@ -49,5 +50,15 @@ function MoneySaved() {
     </div>
   );
 }
+
+MoneySaved.propTypes = {
+  monthlyData: PropTypes.arrayOf(
+    PropTypes.shape({
+      month: PropTypes.string.isRequired,
+      income: PropTypes.number.isRequired,
+      spending: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
 
 export default MoneySaved;

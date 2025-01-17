@@ -4,9 +4,12 @@ import MonthlySpending from "../components/MonthlySpending.jsx";
 import MonthlyIncome from "../components/MonthlyIncome.jsx";
 import MoneySaved from "../components/MoneySaved.jsx";
 import TransactionHistory from "../components/TransactionHistory.jsx";
+import { monthlyData as mockData } from "../data/mockData"; // Ensure the correct data is imported
+import { Link } from "react-router-dom";
 
 function Dashboard() {
   const [greeting, setGreeting] = useState("");
+  const [monthlyData, setMonthlyData] = useState(mockData);
 
   useEffect(() => {
     const hour = new Date().getHours();
@@ -21,11 +24,23 @@ function Dashboard() {
   return (
     <div className={style.dashboard}>
       <h1 className={style.heading}>{greeting}</h1>
-      <div className={style.widgets}>
-        <MoneySaved />
-        <MonthlySpending />
-        <MonthlyIncome />
+      <div className={style.editLinkContainer}>
+        <Link to="/edit-data" className={style.editLink}>
+          Edit Data
+        </Link>
       </div>
+      <div className={style.widgets}>
+        <MoneySaved monthlyData={monthlyData} />
+        <MonthlySpending
+          monthlyData={monthlyData}
+          setMonthlyData={setMonthlyData}
+        />
+        <MonthlyIncome
+          monthlyData={monthlyData}
+          setMonthlyData={setMonthlyData}
+        />
+      </div>
+
       <div className={style.transactionHistory}>
         <TransactionHistory />
       </div>

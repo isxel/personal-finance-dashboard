@@ -1,0 +1,104 @@
+.title {
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.editData {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.monthContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px; /* Space between rows and columns */
+  margin-bottom: 30px; /* Space below the grid */
+  width: 100%; /* Optional: Adjust to fit the parent container */
+  max-width: 800px; /* Optional: Set a max width for better alignment */
+}
+
+.monthRow {
+  padding: 15px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  width: 120px; /* Set a consistent width */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.saveButton {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  /* margin-bottom: 20px; */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.monthLabel {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-right: 10px;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cancelButton {
+  background-color: #dc3545; /* Red for cancel */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancelButton:hover {
+  background-color: #c82333; /* Darker red on hover */
+}
+
+@media (max-width: 800px) {
+  .monthContainer {
+    grid-template-columns: 1fr; /* Single column for small screens */
+  }
+}
