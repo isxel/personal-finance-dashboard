@@ -1,9 +1,11 @@
 import { useState } from "react";
 import style from "../styles/EditData.module.css";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 function EditData({ monthlyData, setMonthlyData }) {
   const [tempData, setTempData] = useState([...monthlyData]);
+  const navigate = useNavigate();
 
   const handleChange = (index, key, value) => {
     const updatedData = [...tempData];
@@ -11,49 +13,63 @@ function EditData({ monthlyData, setMonthlyData }) {
     setTempData(updatedData);
   };
 
+  const [saving, setSaving] = useState(false);
+
   const handleSave = () => {
-    setMonthlyData(tempData);
-    alert("Data updated successfully!");
+    setSaving(true);
+    setTimeout(() => {
+      setMonthlyData(tempData);
+      setSaving(false);
+      navigate("/dashboard");
+    }, 2000); // Simulate save delay
+  };
+
+  const handleCancel = () => {
+    navigate("/dashboard");
   };
 
   return (
     <div className={style.editData}>
-      <h1>Edit Monthly Data</h1>
-      {tempData.map((month, index) => (
-        <div key={index} className={style.monthRow}>
-          <label>
-            Month:
-            <input
-              type="text"
-              value={month.month}
-              onChange={(e) => handleChange(index, "month", e.target.value)}
-            />
-          </label>
-          <label>
-            Income:
-            <input
-              type="number"
-              value={month.income}
-              onChange={(e) =>
-                handleChange(index, "income", parseFloat(e.target.value))
-              }
-            />
-          </label>
-          <label>
-            Spending:
-            <input
-              type="number"
-              value={month.spending}
-              onChange={(e) =>
-                handleChange(index, "spending", parseFloat(e.target.value))
-              }
-            />
-          </label>
-        </div>
-      ))}
-      <button onClick={handleSave} className={style.saveButton}>
-        Save Changes
-      </button>
+      <h1 className={style.title}>Edit Monthly Data</h1>
+      <div className={style.monthContainer}>
+        {tempData.map((month, index) => (
+          <div key={index} className={style.monthRow}>
+            <span className={style.monthLabel}> {month.month}</span>
+            <label>
+              Income:
+              <input
+                type="number"
+                value={month.income}
+                onChange={(e) =>
+                  handleChange(index, "income", parseFloat(e.target.value))
+                }
+              />
+            </label>
+            <label>
+              Spending:
+              <input
+                type="number"
+                value={month.spending}
+                onChange={(e) =>
+                  handleChange(index, "spending", parseFloat(e.target.value))
+                }
+              />
+            </label>
+          </div>
+        ))}
+      </div>
+      <div className={style.buttonRow}>
+        <button onClick={handleCancel} className={style.cancelButton}>
+          Cancel
+        </button>
+        <button
+          onClick={handleSave}
+          className={style.saveButton}
+          disabled={saving}
+        >
+          {saving ? "Saving..." : "Save Changes"}
+        </button>
+      </div>
     </div>
   );
 }

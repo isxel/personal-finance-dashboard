@@ -29,16 +29,16 @@ function MonthlyIncome({ monthlyData, setMonthlyData }) {
       <IncomeGraph data={monthlyData} />
       {monthlyData.map((data) => (
         <div key={data.month}>
-          <p>
+          {/* <p>
             {data.month}: ${data.income}
-          </p>
-          <input
+          </p> */}
+          {/* <input
             type="number"
             placeholder="Update Income"
             value={newIncome}
             onChange={(e) => setNewIncome(e.target.value)}
           />
-          <button onClick={() => handleIncomeUpdate(data.month)}>Update</button>
+          <button onClick={() => handleIncomeUpdate(data.month)}>Update</button> */}
         </div>
       ))}
     </div>
