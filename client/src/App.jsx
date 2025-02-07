@@ -11,19 +11,9 @@ import Signup from "./pages/Signup.jsx";
 import EditData from "./pages/EditData.jsx";
 import { monthlyData as mockData } from "./data/mockData.js";
 import { useState, useEffect } from "react";
-import axios from "axios";
 
 function App() {
   const [monthlyData, setMonthlyData] = useState(mockData);
-
-  const fetchAPI = async () => {
-    const response = await axios.get("http://localhost:5001/api");
-    console.log(response.data.fruits);
-  };
-
-  useEffect(() => {
-    fetchAPI();
-  }, []);
 
   return (
     <Router>
