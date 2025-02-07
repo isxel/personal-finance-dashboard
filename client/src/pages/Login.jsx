@@ -9,6 +9,7 @@ function Login() {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,10 +17,15 @@ function Login() {
       .post("http://localhost:5001/login", { username, password })
       .then((result) => {
         console.log(result);
-        navigate("/dashboard");
+        setMessage("Login Successful.");
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 3000);
       })
-      .catch((err) => console.log(err));
-    alert("Invalid credentials, please try again");
+      .catch((err) => {
+        console.log(err);
+        setMessage("Invalid credentials, please try again");
+      });
   };
   return (
     <div className={sharedStyles.authPage}>
@@ -27,6 +33,9 @@ function Login() {
         <HiUserCircle className={sharedStyles.icon} />
 
         <h1 className={loginStyles.welcomeMessage}>Welcome Back!</h1>
+        {message && (
+          <div className={sharedStyles.successMessage}>{message}</div>
+        )}
         <form onSubmit={handleSubmit}>
           <input
             className={sharedStyles.formField}

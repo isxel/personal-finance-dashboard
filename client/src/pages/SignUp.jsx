@@ -10,6 +10,7 @@ function Signup() {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,17 +18,26 @@ function Signup() {
       .post("http://localhost:5001/Users", { email, username, password })
       .then((result) => {
         console.log(result);
-        navigate("/login");
+        setMessage("Signup successful! You can now log in.");
+        setTimeout(() => {
+          navigate("/login");
+        }, 3000);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setMessage("An error occured during signup. Please try again.");
+      });
   };
 
   return (
     <div className={sharedStyles.authPage}>
       <div className={sharedStyles.formContainer}>
         <HiUserCircle className={sharedStyles.icon} />
-
         <h1 className={loginStyles.welcomeMessage}>Welcome!</h1>
+        {message && (
+          <div className={sharedStyles.successMessage}>{message}</div>
+        )}
+        {/* Show success/error message */}
         <form onSubmit={handleSubmit}>
           <input
             className={sharedStyles.formField}
