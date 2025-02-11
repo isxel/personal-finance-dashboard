@@ -7,10 +7,10 @@ import Banner from "./components/Banner.jsx";
 import Features from "./components/Features.jsx";
 import Footer from "./components/Footer.jsx";
 import Login from "./pages/Login.jsx";
-import Signup from "./pages/Signup.jsx";
+import Signup from "./pages/SignUp.jsx";
 import EditData from "./pages/EditData.jsx";
 import { monthlyData as mockData } from "./data/mockData.js";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
   const [monthlyData, setMonthlyData] = useState(mockData);

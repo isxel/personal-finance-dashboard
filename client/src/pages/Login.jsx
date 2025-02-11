@@ -10,6 +10,7 @@ function Login() {
   const [password, setPassword] = useState();
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
+  const { login, error, isLoading } = useSignup();
 
   const handleSubmit = (e) => {
     e.preventDefault();
