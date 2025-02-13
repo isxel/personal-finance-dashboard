@@ -1,29 +1,33 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import sharedStyles from "../styles/AuthForms.module.css";
 import loginStyles from "../styles/Login.module.css";
 import { HiUserCircle } from "react-icons/hi2";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../context/AuthContext";
 
 function Login() {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
+  const { login } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
       .post("http://localhost:5001/login", { username, password })
       .then((result) => {
-        console.log(result);
+        console.log("Login response:", result);
+        localStorage.setItem("token", result.data.token);
+        login(result.data.token);
         setMessage("Login Successful.");
         setTimeout(() => {
           navigate("/dashboard");
-        }, 3000);
+        }, 1500);
       })
       .catch((err) => {
-        console.log(err);
+        console.error("Login error:", err);
         setMessage("Invalid credentials, please try again");
       });
   };
