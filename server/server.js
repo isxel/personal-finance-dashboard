@@ -5,10 +5,6 @@ const User = require("./models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-const createToken = (_id) => {
-  return jwt.sign({ _id }, process.env.SECRET, { expiresIn: "3d" });
-};
-
 const app = express();
 const PORT = 5001;
 
@@ -77,15 +73,41 @@ app.post("/login", async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
-    //Generate JWT token
-    const token = createToken(user._id);
+    // Generate a JWT token
+    const token = jwt.sign(
+      { userId: user._id, username: user.username },
+      process.env.JWT_SECRET,
+      { expiresIn: "3d" }
+    );
 
     // If everything is good, send a success response (you can include a token for sessions if needed)
-    res.status(200).json({ username: user.username, token });
+    res.status(200).json({ message: "Login successful", token });
+
   } catch (error) {
     console.error("Login error:", error);
     res.status(500).json({ message: "Internal Server Error" });
   }
+});
+
+const authenticateJWT = (req, res, next) => {
+  const token = req.header("Authorization")?.split(" ")[1];
+
+  if (!token) {
+    return res.status(401).json({ message: "Unauthorized" });
+  }
+
+  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(403).json({ message: "Invalid token" });
+    }
+    req.user = decoded;
+    next();
+  });
+};
+
+// Example of a protected route
+app.get("/protected-route", authenticateJWT, (req, res) => {
+  res.json({ user: req.user });
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

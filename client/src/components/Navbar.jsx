@@ -1,32 +1,43 @@
 import styles from "../styles/Navbar.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import sprout from "../assets/img/sprout.png";
-import { useLogout } from "../hooks/useLogout";
+import { useContext } from "react";
+import AuthContext from "../context/AuthContext";
 
 function Navbar() {
-  const { logout } = useLogout();
-  const handleClick = () => {
+  const { user, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
     logout();
+    navigate("/login"); // Redirect to login after logout
   };
+
   return (
     <header className={styles.header}>
-      <div className="container">
-        <nav className={styles.navbarText}>
-          <Link to="/" className={styles.navbarText}>
-            <img src={sprout} className={styles.logo}></img>
-          </Link>
-          <div>
-            <button onClick={handleClick}>Log out</button>
-          </div>
-        </nav>
-        <div className={styles.authLinks}>
-          <Link to="/login" className={styles.navbarText}>
-            Login
-          </Link>
-          <Link to="/signup" className={styles.signupText}>
-            Sign Up
-          </Link>
-        </div>
+      <nav className={styles.navbarText}>
+        <Link to="/" className={styles.navbarText}>
+          <img src={sprout} className={styles.logo} alt="Sprout Logo" />
+        </Link>
+      </nav>
+
+      <div className={styles.authLinks}>
+        {user ? (
+          // If the user is logged in, show Logout button
+          <button className={styles.navbarText} onClick={handleLogout}>
+            Logout
+          </button>
+        ) : (
+          // If no user is logged in, show Login and Sign Up links
+          <>
+            <Link to="/login" className={styles.navbarText}>
+              Login
+            </Link>
+            <Link to="/signup" className={styles.signupText}>
+              Sign Up
+            </Link>
+          </>
+        )}
       </div>
     </header>
   );

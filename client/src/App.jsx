@@ -11,41 +11,51 @@ import Signup from "./pages/SignUp.jsx";
 import EditData from "./pages/EditData.jsx";
 import { monthlyData as mockData } from "./data/mockData.js";
 import { useState } from "react";
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoutes.jsx";
+
 
 function App() {
   const [monthlyData, setMonthlyData] = useState(mockData);
 
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <Banner />
-              <Features />
-            </>
-          }
-        />
-        <Route
-          path="/dashboard"
-          element={<Dashboard monthlyData={monthlyData} />}
-        />
-        <Route
-          path="/edit-data"
-          element={
-            <EditData
-              monthlyData={monthlyData}
-              setMonthlyData={setMonthlyData}
-            />
-          }
-        />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
-      <Footer />
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Banner />
+                <Features />
+              </>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute
+                element={<Dashboard monthlyData={monthlyData} />}
+              />
+            }
+          />
+
+          <Route
+            path="/edit-data"
+            element={
+              <EditData
+                monthlyData={monthlyData}
+                setMonthlyData={setMonthlyData}
+              />
+            }
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+        <Footer />
+      </AuthProvider>
     </Router>
   );
 }
