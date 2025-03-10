@@ -72,18 +72,18 @@ npm run dev
 ```
 The frontend should now be running on http://localhost:5173.
 
-🔑 Authentication
+🔑 Authentication:
 Users can signup, login, and logout securely.
 JWT tokens are used for authentication.
 ProtectedRoute ensures only logged-in users can access the dashboard.
 
-🐛 Issues & Contributions
+🐛 Issues & Contributions:
 If you find any bugs or have suggestions, feel free to open an issue or create a pull request.
 
-📄 License
+📄 License:
 This project is open-source and free to use.
 
-🏆 Acknowledgments
+🏆 Acknowledgments:
 Built with ❤️ by Isael Ramirez
 Inspired by the need for better financial tracking tools.
 
