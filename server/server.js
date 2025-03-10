@@ -82,6 +82,7 @@ app.post("/login", async (req, res) => {
 
     // If everything is good, send a success response (you can include a token for sessions if needed)
     res.status(200).json({ message: "Login successful", token });
+
   } catch (error) {
     console.error("Login error:", error);
     res.status(500).json({ message: "Internal Server Error" });

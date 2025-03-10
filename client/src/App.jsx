@@ -7,12 +7,13 @@ import Banner from "./components/Banner.jsx";
 import Features from "./components/Features.jsx";
 import Footer from "./components/Footer.jsx";
 import Login from "./pages/Login.jsx";
-import Signup from "./pages/Signup.jsx";
+import Signup from "./pages/SignUp.jsx";
 import EditData from "./pages/EditData.jsx";
 import { monthlyData as mockData } from "./data/mockData.js";
 import { useState } from "react";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoutes.jsx";
+
 
 function App() {
   const [monthlyData, setMonthlyData] = useState(mockData);
