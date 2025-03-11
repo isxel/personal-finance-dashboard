@@ -1,6 +1,6 @@
 .banner {
   display: flex;
-  background-color: #d8fad9;
+  background: linear-gradient(135deg, #d8fad9 0%, #a3e4a5 100%);
   padding: 2em;
   margin: 0 auto;
   align-items: center;

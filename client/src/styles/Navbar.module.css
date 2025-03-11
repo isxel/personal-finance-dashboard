@@ -44,6 +44,19 @@ html {
   align-items: center;
 }
 
+.logoutButton {
+  background-color: #e12f2f;
+  color: #ffffff;
+  border-color: #e12f2f;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  font-weight: normal;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: none !important; /* Forcefully remove any shadows */
+  filter: drop-shadow(0 0 0 transparent) !important; /* Extra shadow removal */
+}
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column; /* Stack items vertically */

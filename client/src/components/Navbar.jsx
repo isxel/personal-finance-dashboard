@@ -24,7 +24,7 @@ function Navbar() {
       <div className={styles.authLinks}>
         {user ? (
           // If the user is logged in, show Logout button
-          <button className={styles.navbarText} onClick={handleLogout}>
+          <button className={styles.logoutButton} onClick={handleLogout}>
             Logout
           </button>
         ) : (
