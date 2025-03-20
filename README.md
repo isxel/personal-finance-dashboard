@@ -1,9 +1,6 @@
 # 💰 Personal Finance Dashboard
 A web application that helps users visualize and manage their personal finances efficiently. Built with **React (Vite)** for the frontend and **Node.js + Express + MongoDB** for the backend.
 
-## 📸 Preview
-
-
 ---
 
 ## ✨ Features
