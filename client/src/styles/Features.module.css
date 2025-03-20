@@ -1,7 +1,7 @@
 .features {
   display: flex;
-  flex-direction: column; /* Stack rows vertically */
-  gap: 3rem; /* Add spacing between rows */
+  flex-direction: column;
+  gap: 3rem;
   margin: 0 auto;
   max-width: 1200px;
   padding: 3rem;
@@ -10,17 +10,17 @@
 .featureRow {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Vertically align left and right sides */
+  align-items: center;
 }
 
 .leftSide {
-  flex: 1; /* Allow left side to take up equal space */
+  flex: 1;
   text-align: left;
   max-width: 500px;
 }
 
 .rightSide {
-  flex: 0; /* Keep the right side content compact */
+  flex: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,5 +39,5 @@
 }
 
 .icon {
-  font-size: 12rem; /* Adjust icon size as needed */
+  font-size: 12rem;
 }

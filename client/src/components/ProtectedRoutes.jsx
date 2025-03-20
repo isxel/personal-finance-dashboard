@@ -7,7 +7,7 @@ const ProtectedRoute = ({ element }) => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    console.log("ProtectedRoute - User:", user); // Debugging line
+    console.log("ProtectedRoute - User:", user);
   }, [user]);
 
   return user ? element : <Navigate to="/login" />;

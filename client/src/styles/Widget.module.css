@@ -4,8 +4,8 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 100%; /* Make sure the widget takes full width within its container */
-  max-width: 550px; /* Keeps the widget size proportional */
+  width: 100%;
+  max-width: 550px;
   margin: 2rem auto;
   box-sizing: border-box;
 }
@@ -23,29 +23,29 @@
 
 @media (max-width: 768px) {
   .widget {
-    padding: 1rem; /* Reduce padding for smaller screens */
-    max-width: 90%; /* Allow the widget to take up more space */
+    padding: 1rem;
+    max-width: 90%;
   }
 
   .widget h2 {
-    font-size: 1.25rem; /* Reduce heading size */
+    font-size: 1.25rem;
   }
 
   .widget p {
-    font-size: 1rem; /* Reduce text size */
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .widget {
-    padding: 0.75rem; /* Further reduce padding for very small screens */
+    padding: 0.75rem;
   }
 
   .widget h2 {
-    font-size: 1rem; /* Further reduce heading size */
+    font-size: 1rem;
   }
 
   .widget p {
-    font-size: 0.9rem; /* Further reduce text size */
+    font-size: 0.9rem;
   }
 }

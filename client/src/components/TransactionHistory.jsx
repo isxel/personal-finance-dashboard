@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "../styles/TransactionHistory.module.css";
 
-// const saveToLocalStorage = (key, data) => {
-//   localStorage.setItem(key, JSON.stringify(data));
-// };
-
 function TransactionHistory() {
   const [transactions, setTransactions] = useState(() => {
     const savedTransactions = localStorage.getItem("transactions");
@@ -60,7 +56,7 @@ function TransactionHistory() {
   };
 
   const handleLoadLess = () => {
-    setVisibleCount((prev) => Math.max(prev - 5, 5)); // Ensure at least 5 transactions are visible
+    setVisibleCount((prev) => Math.max(prev - 5, 5));
   };
 
   return (

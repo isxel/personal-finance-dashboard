@@ -21,7 +21,7 @@ function EditData({ monthlyData, setMonthlyData }) {
       setMonthlyData(tempData);
       setSaving(false);
       navigate("/dashboard");
-    }, 2000); // Simulate save delay
+    }, 2000);
   };
 
   const handleCancel = () => {

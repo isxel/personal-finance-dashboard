@@ -1,4 +1,3 @@
-// src/components/IncomeGraph.jsx
 import PropTypes from "prop-types";
 import {
   LineChart,
@@ -9,7 +8,6 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-// import { monthlyData } from "../data/mockData"; // Ensure the correct data is imported
 
 function SpendingGraph({ data }) {
   return (

@@ -10,7 +10,7 @@ function Navbar() {
 
   const handleLogout = () => {
     logout();
-    navigate("/login"); // Redirect to login after logout
+    navigate("/login");
   };
 
   return (
@@ -23,12 +23,10 @@ function Navbar() {
 
       <div className={styles.authLinks}>
         {user ? (
-          // If the user is logged in, show Logout button
           <button className={styles.logoutButton} onClick={handleLogout}>
             Logout
           </button>
         ) : (
-          // If no user is logged in, show Login and Sign Up links
           <>
             <Link to="/login" className={styles.navbarText}>
               Login

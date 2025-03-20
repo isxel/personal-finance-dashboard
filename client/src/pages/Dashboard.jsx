@@ -4,7 +4,7 @@ import MonthlySpending from "../components/MonthlySpending.jsx";
 import MonthlyIncome from "../components/MonthlyIncome.jsx";
 import MoneySaved from "../components/MoneySaved.jsx";
 import TransactionHistory from "../components/TransactionHistory.jsx";
-import { monthlyData as mockData } from "../data/mockData"; // Ensure the correct data is imported
+import { monthlyData as mockData } from "../data/mockData";
 import { Link } from "react-router-dom";
 
 function Dashboard() {

@@ -1,28 +1,24 @@
-/* Container for the hero section */
 .hero {
-  display: flex; /* Flexbox to create two columns */
-  justify-content: space-between; /* Space between left and right sides */
-  align-items: center; /* Vertically center the content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 2rem;
   margin: 0 auto;
-  max-width: 1200px; /* Center the content and limit the width */
+  max-width: 1200px;
 }
 
-/* Left side (text and button) */
 .leftSide {
-  flex: 1; /* Take up equal space as the right side */
+  flex: 1;
   text-align: left;
   padding-right: 2rem;
 }
 
-/* Right side (image) */
 .rightSide {
-  flex: 1; /* Take up equal space as the left side */
+  flex: 1;
   display: flex;
-  justify-content: center; /* Center the image horizontally */
+  justify-content: center;
 }
 
-/* Text styles */
 .welcomeText {
   font-size: 2.5rem;
   font-weight: normal;
@@ -35,7 +31,6 @@
   font-weight: 200;
 }
 
-/* Button styles */
 .getStartedButton {
   padding: 0.75rem 0.75rem;
   background-color: #4caf50;
@@ -50,9 +45,8 @@
   background-color: #45a049;
 }
 
-/* Image styles */
 .heroImage {
-  max-width: 100%; /* Ensure the image scales responsively */
+  max-width: 100%;
   height: auto;
-  border-radius: 10px; /* Optional: Adds rounded corners */
+  border-radius: 10px;
 }

@@ -4,7 +4,6 @@ import { FcBullish, FcRules, FcTemplate } from "react-icons/fc";
 function Features() {
   return (
     <div className={style.features}>
-      {/* Wrap each feature in a container */}
       <div className={style.featureRow}>
         <div className={style.leftSide}>
           <h1 className={style.titleText}>Comprehensive Dashboard</h1>

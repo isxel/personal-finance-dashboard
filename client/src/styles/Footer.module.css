@@ -8,7 +8,7 @@
 .footerContent {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Ensures vertical alignment */
+  align-items: flex-start;
   max-width: 1200px;
   margin: 0 auto;
   flex-wrap: wrap;
@@ -17,9 +17,9 @@
 .contact,
 .quickLinks,
 .social {
-  flex: 1; /* Equal space for each section */
+  flex: 1;
   padding: 1rem 20px;
-  text-align: center; /* Center-aligns the text within each section */
+  text-align: center;
   box-sizing: border-box;
 }
 
@@ -77,34 +77,34 @@
 
 @media (max-width: 768px) {
   .footerContent {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center all items */
+    flex-direction: column;
+    align-items: center;
   }
 
   .contact,
   .quickLinks,
   .social {
-    flex: unset; /* Reset flex behavior for stacked layout */
-    width: 100%; /* Ensure each section takes full width */
-    text-align: center; /* Keep content centered */
-    margin-bottom: 1.5rem; /* Add space between stacked sections */
+    flex: unset;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .footerContent {
-    padding: 1rem; /* Add padding for very small screens */
+    padding: 1rem;
   }
 
   .contact h3,
   .quickLinks h3,
   .social h3 {
-    font-size: 1.2rem; /* Reduce heading size */
+    font-size: 1.2rem;
   }
 
   .contact p,
   .social p,
   .quickLinks ul {
-    font-size: 0.9rem; /* Reduce font size for text */
+    font-size: 0.9rem;
   }
 }

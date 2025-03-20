@@ -1,9 +1,7 @@
 import style from "../styles/Widget.module.css";
 import { useState } from "react";
-// import { monthlyData } from "../data/mockData";
 import { FaArrowUp } from "react-icons/fa";
 import IncomeGraph from "./incomeGraph";
-import { monthlyData } from "../data/mockData";
 import PropTypes from "prop-types";
 
 function MonthlyIncome({ monthlyData, setMonthlyData }) {

@@ -1,5 +1,4 @@
 import style from "../styles/Widget.module.css";
-// import { monthlyData } from "../data/mockData";
 import { FaPiggyBank } from "react-icons/fa";
 import { FaMoneyBill } from "react-icons/fa";
 import PropTypes from "prop-types";

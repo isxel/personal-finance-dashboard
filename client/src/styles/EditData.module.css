@@ -85,7 +85,7 @@ input {
 }
 
 .cancelButton {
-  background-color: #dc3545; /* Red for cancel */
+  background-color: #dc3545;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -94,11 +94,11 @@ input {
 }
 
 .cancelButton:hover {
-  background-color: #c82333; /* Darker red on hover */
+  background-color: #c82333;
 }
 
 @media (max-width: 800px) {
   .monthContainer {
-    grid-template-columns: 1fr; /* Single column for small screens */
+    grid-template-columns: 1fr;
   }
 }
